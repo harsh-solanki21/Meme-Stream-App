@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/animate.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+    <script>
+      tinymce.init({ selector: "textarea" });
+    </script>
+    <title>New blog post</title>
+  </head>
+
+  <body>
+    <div class="container mt-2 ml-5">
+      <h1 class="mb-4 text-primary">Upload Meme</h1>
+
+      <form
+        action="/blogs"
+        method="POST"
+        enctype="multipart/form-data"
+        class="needs-validation"
+        novalidate
+      >
+        <div class="form-group">
+          <label for="title" class="text-primary">Meme Title</label>
+          <input
+            type="text"
+            class="form-control col-sm-5"
+            placeholder="Enter title of the meme"
+            name="title"
+            required
+          />
+          <li class="invalid-feedback">Please provide meme title</li>
+        </div>
+
+        <div class="form-group">
+          <label for="author" class="text-primary">Meme Owner</label>
+          <input
+            type="text"
+            class="form-control col-sm-5"
+            placeholder="Enter your name"
+            name="author"
+            required
+          />
+          <li class="invalid-feedback">Please provide owner name</li>
+        </div>
+        <div class="form-group">
+          <label for="description" class="text-primary">Caption</label>
+          <input
+            name="description"
+            placeholder="Be creative with the caption"
+            class="form-control col-sm-5"
+            required
+          />
+          <li class="invalid-feedback">Please provide a valid caption</li>
+        </div>
+        <!--<div class="form-group">
+          <label for="image" class="text-primary">Upload image</label>
+          <input
+            type="file"
+            name="image"
+            id="image"
+            class="form-control-file text-white"
+          />
+        </div>-->
+        <div class="form-group pb-2">
+          <label for="image" class="text-primary">Upload image</label>
+          <div class="drop-zone">
+            <span class="drop-zone__prompt"
+              >Drop file here or click to upload</span
+            >
+            <input
+              type="file"
+              name="image"
+              class="drop-zone__input"
+              id="image"
+              required
+            />
+            <li class="invalid-feedback">Please insert an image</li>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <a href="/" class="btn btn-warning">Cancel</a>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="/js/animate.js"></script>
+    <script src="/js/drop.js"></script>
+  </body>
+</html>

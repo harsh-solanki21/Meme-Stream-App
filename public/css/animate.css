@@ -1,0 +1,6 @@
+/* bg Animation */
+.ball {
+  position: fixed;
+  border-radius: 100%;
+  opacity: 0.7;
+}
